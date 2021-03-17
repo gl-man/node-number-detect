@@ -23,7 +23,7 @@ app.post('/api/', upload.single('file'), (req, res) => {
         return res.send({ status: false, error: 'image is not uploaded' });
     }
 
-    exec(`Debug\\ConsoleDemo.exe ${image} ${outputFile}`, (error, stdout, stderr) => {
+    exec(`Release\\ConsoleDemo.exe ${image} ${outputFile}`, (error, stdout, stderr) => {
         try {
             fs.unlinkSync(image);
 
@@ -53,6 +53,6 @@ app.post('/api/', upload.single('file'), (req, res) => {
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
