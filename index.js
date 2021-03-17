@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3002
 const fs = require('fs')
 const { exec } = require("child_process");
 var multer = require('multer')
-
+app.use(require('cors')())
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'uploads')
