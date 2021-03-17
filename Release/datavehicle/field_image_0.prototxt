@@ -1,0 +1,8 @@
+oversampling_amount : 300
+oversampling_shape_offset : 0.2
+nu : 0.1
+tree_depth : 5
+feature_pool_size : 50
+cascade_depth : 5
+num_trees_per_cascade_level : 32
+feature_pool_region_padding : 0.05
