@@ -23,7 +23,7 @@ app.post('/api/', upload.single('file'), (req, res) => {
         return res.send({ status: false, error: 'image is not uploaded' });
     }
 
-    exec(`Release\\ConsoleDemo.exe ${image} ${outputFile}`, (error, stdout, stderr) => {
+    exec(`Release\\ConsoleDemo.exe "${image}" ${outputFile}`, (error, stdout, stderr) => {
         try {
             fs.unlinkSync(image);
 
